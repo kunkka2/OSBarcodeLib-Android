@@ -26,4 +26,10 @@ jobs:
 
     - name: Code Coverage
       run: bundle exec fastlane coverage
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v3
+    - name: code help
+      run: |
+        bundle --help
+        ./gradlew assembleRelease
    
