@@ -1,11 +1,7 @@
-name: GitHub Actions
+name: TEST android 7.1
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ main, development ]
-  pull_request:
-    branches: [ main, development ]
 
 jobs:    
   test:
@@ -30,12 +26,4 @@ jobs:
 
     - name: Code Coverage
       run: bundle exec fastlane coverage
-
-    - name: Setup sonarqube
-      uses: warchant/setup-sonar-scanner@v8
-
-    - name: Send to Sonarcloud
-      run: bundle exec fastlane sonarqube
-      env: 
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}      
+   
