@@ -32,4 +32,11 @@ jobs:
       run: |
         bundle --help
         ./gradlew assembleRelease
+        ls build/outputs/aar
+    - name: Upload build
+      uses: actions/upload-artifact@master
+      with:
+        name: arr
+        path: build/outputs/aar
+
    
